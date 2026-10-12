@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Environmental Monitoring System</h1>
+        <p>Monitor environmental conditions in real time</p>
+    </header>
+
+    <main>
+        <section class="cards">
+            <div class="card">
+                <h3>Temperature</h3>
+                <p id="temperature">-- °C</p>
+            </div>
+
+            <div class="card">
+                <h3>Humidity</h3>
+                <p id="humidity">-- %</p>
+            </div>
+
+            <div class="card">
+                <h3>Air Quality</h3>
+                <p id="air">--</p>
+            </div>
+        </section>
+
+        <section class="status">
+            <h2>Environmental Status</h2>
+            <p id="status">Loading readings...</p>
+            <button onclick="loadReadings()">Refresh Data</button>
+        </section>
+
+        <!-- Environmental Charts -->
+        <section class="charts">
+            <h2>Environmental Monitoring Charts</h2>
+
+            <div class="chart-container">
+                <h3>Temperature History (°C)</h3>
+                <canvas id="temperatureChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>Humidity History (%)</h3>
+                <canvas id="humidityChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Existing dashboard code -->
+    <script src="script.js"></script>
+
+    <!-- Chart code -->
+    <script src="charts.js"></script>
+</body>
+</html>
+
+<div class="chart-container">
+    <h3>Air Quality History</h3>
+    <canvas id="airQualityChart"></canvas>
+</div>
+
+<div class="chart-container">
+    <h3>Anomaly Detection</h3>
+    <p id="anomalyWarning">Checking readings...</p>
+</div>
+
+<section class="history-section">
+    <h2>Environmental Reading History</h2>
+
+    <button onclick="loadHistory()">Refresh History</button>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Temperature (°C)</th>
+                    <th>Humidity (%)</th>
+                    <th>Air Quality</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="historyTable">
+                <tr>
+                    <td colspan="5">Loading history...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
